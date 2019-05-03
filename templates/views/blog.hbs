@@ -14,10 +14,10 @@
 <div class="section-block-grey">
 	<div class="container">
 		{{#if data.posts.results.length}}
-		<div class="row">
+		<div class="row" style="display: flex; flex-wrap:wrap;">
 			{{#each data.posts.results}}
 			<div class="col-xs-12 col-sm-6 col-md-4">
-				<div class="blog-grid">
+				<div class="blog-grid" style="height: calc(100% - 30px)">
 					<div class="blog-grid-img">
 						<img alt="blog-img" src="{{{cloudinaryUrl image width=380 height=200 crop='fit'}}}">
 					</div>

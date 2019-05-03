@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="/assets/css/pogo-slider.min.css" type="text/css">
 	<link rel="stylesheet" href="/assets/css/slider.css" type="text/css">
 	<link rel="stylesheet" href="/assets/css/default.css" type="text/css">
+	<link href="/assets/js/fancybox/jquery.fancybox.css" rel="stylesheet">
 
 	<!--  CUSTOM STYLE  -->
 	<link rel="stylesheet" href="/assets/css/styles.css" type="text/css">
@@ -153,6 +154,20 @@
 	<script src="/assets/js/tabs.min.js"></script>
 	<script src="/assets/js/modernizr.js"></script>
 	<script src="/assets/js/main.js"></script>
+	<script src="/assets/js/fancybox/jquery.fancybox.pack.js"></script>
+	<script>
+		jQuery(function ($) {
+			$('.gallery-fancy-box').fancybox({
+				prevEffect: 'none',
+				nextEffect: 'none',
+				closeBtn: false,
+				helpers: {
+					titl: {},
+					buttons: {}
+				}
+			});
+		});
+	</script>
 </body>
 
 </html>

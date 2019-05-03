@@ -1,32 +1,61 @@
-<div class="container">
-	<h1>Gallery</h1>
+<div class="page-title-section" style="background-image:url(images/parallax-5.jpg)">
+	<div class="container">
+		<div class="center-holder page-title">
+			<h1>Gallery</h1>
+			<ul>
+				<li><a href='/'>Home</a>
+				<li><a href='/gallery'>Gallery</a>
+			</ul>
+		</div>
+	</div>
 </div>
-<div class="container">
-	<!-- if galleries -->
-	{{#if galleries}}
+<div class="section-block">
+	<div class="container">
+		<!-- if galleries -->
+		{{#if galleries}}
 		{{#each galleries}}
-		<h2>{{name}}
-			<div class="pull-right text-muted">19th May 2014</div>
-		</h2>
+		<h2>{{name}}</h2>
 		<div class="row gallery-images">
-				{{#if heroImage}}
-				<div class="col-sm-4 col-md-4 gallery-image">
-					<img src="{{cloudinaryUrl heroImage width='680' height='680'}}" class="img-rounded">
-				</div>
-				{{/if}}
-				<div class="col-sm-8 col-md-8">
-					<div class="row">
-						{{#each images}}
-						<div class="col-xs-4 col-sm-4 col-md-3 gallery-image">
-							<img src="{{cloudinaryUrl width='300' height='300'}}" class="img-rounded">
-						</div>
-						{{/each}}
+			{{#if heroImage.url}}
+			<div class="col-sm-4 col-md-4 gallery-image">
+				<a class="gallery-image gallery-fancy-box"
+					href="{{cloudinaryUrl heroImage width=900 height=600 crop='limit'}}" rel='{{key}}'>
+					<img class="img-rounded" src="{{cloudinaryUrl heroImage width=680 height=680 crop='limit'}}">
+				</a>
+			</div>
+			<div class="col-sm-8 col-md-8">
+				<div class="row">
+					{{#each images}}
+					<div class="col-xs-4 col-sm-4 col-md-3 gallery-image mb-10">
+						<a class="gallery-image gallery-fancy-box"
+							href="{{cloudinaryUrl width=900 height=600 crop='limit'}}" rel='{{key}}'>
+							<img class="img-rounded"
+								src="{{cloudinaryUrl width=300 height=300 gravity='auto' crop='fill'}}">
+						</a>
 					</div>
+					{{/each}}
 				</div>
+			</div>
+			{{else}}
+			<div class="col-sm-12 col-md-12">
+				<div class="row">
+					{{#each images}}
+					<div class="col-xs-4 col-sm-4 col-md-2 gallery-image mb-10">
+						<a class="gallery-image gallery-fancy-box"
+							href="{{cloudinaryUrl width=900 height=600 crop='limit'}}" rel='{{key}}'>
+							<img class="img-rounded"
+								src="{{cloudinaryUrl width=300 height=300 gravity='auto' crop='fill'}}">
+						</a>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+			{{/if}}
 		</div>
 		{{/each}}
-	{{else}}
-	<!-- else -->
-	<h3 class="text-muted">There are no image galleries yet.</h3>
-	{{/if}}
+		{{else}}
+		<!-- else -->
+		<h3 class="text-muted">There are no image galleries yet.</h3>
+		{{/if}}
+	</div>
 </div>
