@@ -1,33 +1,46 @@
-<div class="container">
-	<h1>Blog</h1>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="col-sm-8 col-md-9">
-			<h4 class="text-weight-normal">Showing {{ data.posts.results.length}} post.</h4>
-			<div class="blog">
-				{{# each data.posts.results}}
-				<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
-					<h2><a href="{{postUrl slug}}">{{{title}}}</a></h2>
-					<p class="lead text-muted">{{{categoryList categories prefix="Posted in "}}}
-							{{#if author.name.first}}by {{author.name.first}}{{/if}}
-					</p>
-					{{#if image}}<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img pull-right">{{/if}}
-					<p>{{{content.brief}}}</p>
-					{{#if content.extended}}<p class="read-more"><a href="{{postUrl slug}}">Read more...</a></p>{{/if}}
-				</div>
-				{{/each}}
-			</div>
-		</div>
-		<div class="col-sm-4 col-md-3">
-			<h2>Categories</h2>
-			<div style="margin-top: 70px;" class="list-group">
-				<a href="/blog" class="active list-group-item">All Categories</a>
-				{{# each data.categories }}
-				<a href="{{categoryUrl key}}" class="false list-group-item">{{name}}</a>
-				{{/each}}
-			</div>
+{{!-- banner --}}
+<div class="page-title-section" style="background-image:url(/images/parallax-5.jpg)">
+	<div class="container">
+		<div class="center-holder page-title">
+			<h1>Blog</h1>
+			<ul>
+				<li><a href='/'>Home</a>
+				<li><a href='/blog'>Blog</a>
+			</ul>
 		</div>
 	</div>
-	{{>pagination}}
+</div>
+{{!-- blog list --}}
+<div class="section-block-grey">
+	<div class="container">
+		{{#if data.posts.results.length}}
+		<div class="row">
+			{{#each data.posts.results}}
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<div class="blog-grid">
+					<div class="blog-grid-img">
+						<img alt="blog-img" src="{{{cloudinaryUrl image width=380 height=200 crop='fit'}}}">
+					</div>
+					<div class="blog-grid-content inner-padd">
+						<h4><a href="{{postUrl slug}}">{{{title}}}</a></h4>
+						{{#if author.name.first}}
+						<div class="admin-info"><i class="icon-users"></i><span>{{author.name.first}}</span></div>
+						{{/if}}
+						<div class="admin-info">
+							<i class="icon-calendar-6"></i><span>{{ date publishedDate format='MMMM Do YYYY' }}</span>
+						</div>
+						<p>{{{content.brief}}}</p>
+						<div class="blog-grid-button">
+							<a href="{{postUrl slug}}">Read More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+		{{>pagination}}
+		{{else}}
+		<h3 class="text-muted">There are no blogs yet.</h3>
+		{{/if}}
+	</div>
 </div>

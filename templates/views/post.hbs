@@ -1,21 +1,63 @@
-<div class="container">
-	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-			<article>
-				<p><a href="/blog">&larr; back to the blog</a></p>
-				<hr>
-				<header>
-					<h1>{{data.post.title}}</h1>
-					<h5>
-						{{{categoryList data.post.categories prefix="Posted in "}}}
-						{{#if author.name.first}}by {{author.name.first}}{{/if}}
-					</h5>
-				</header>
-				<div class="post">
-					{{#if data.post.image}}<img src="{{{cloudinaryUrl data.post.image width=750 height=450 crop='fit' }}}" class="img-responsive">{{/if}}
+{{!-- banner --}}
+<div class=page-title-section style="background-image:url(/images/parallax-5.jpg)">
+	<div class=container>
+		<div class="center-holder page-title">
+			<h1>{{data.post.title}}</h1>
+			<ul>
+				<li><a href='/'>Home</a>
+				<li><a href='/blog'>Blog</a>
+			</ul>
+		</div>
+	</div>
+</div>
+{{!-- content --}}
+<div class="section-block">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-8 col-sm-8">
+				<div class="blog-post">
+					<img alt="blog-image" src="{{{cloudinaryUrl data.post.image width=760 height=390 crop='fill'}}}">
+					<h4>{{data.post.title}}</h4>
+					{{#if data.post.author.name.first}}
+					<div class="blog-post-info">
+						<i class="icon-users"></i><span>{{data.post.author.name.first}}</span>
+					</div>
+					{{/if}}
+					<div class="blog-post-info">
+						<i class="icon-calendar-6"></i><span>{{ date publishedDate format='MMMM Do YYYY' }}</span>
+					</div>
+					<div class="blog-post-info">
+						<i class="icon-attachment"></i><span>{{{categoryList data.post.categories }}}</span>
+					</div>
 					{{{data.post.content.extended}}}
 				</div>
-			</article>
+			</div>
+			<div class="col-xs-12 col-md-4 col-sm-4">
+				<div class="blog-post-left">
+					<h4>Recent Posts</h4>
+					{{#each data.posts}}
+					<div class="recent-posts">
+						<div class="row">
+							<div class="col-xs-12 col-md-5 col-sm-5 recent-posts-img">
+								<img alt="blog-image" src="{{{cloudinaryUrl image width=380 height=200 crop='fill'}}}">
+							</div>
+							<div class="col-xs-12 col-md-7 col-sm-7 recent-posts-text">
+								<p><a href=#>{{title}}</a></p>
+								<span>{{ date publishedDate format='MMMM Do YYYY' }}</span>
+							</div>
+						</div>
+					</div>
+					{{/each}}
+				</div>
+				<div class="blog-post-left categories">
+					<h4>Category</h4>
+					<ul>
+						{{#each data.categories}}
+						<li><a href="{{categoryUrl key}}">{{name}} <span>({{postCount}})</span></a></li>
+						{{/each}}
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

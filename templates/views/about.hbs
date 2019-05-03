@@ -1,0 +1,117 @@
+{{!-- banner --}}
+<div class="page-title-section" style="background-image:url(images/parallax-5.jpg)">
+    <div class="container">
+        <div class="center-holder page-title">
+            <h1>About</h1>
+            <ul>
+                <li><a href='/'>Home</a>
+                <li><a href='/about'>About</a>
+            </ul>
+        </div>
+    </div>
+</div>
+{{!-- about --}}
+<div class="section-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <img alt="team-img" src="images/teamm.jpg" class="border-round full-width img-shadow">
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-5">
+                <div class="section-heading left-holder mt-20">
+                    <h2>We are creative company</h2>
+                    <div class="left-holder tabs tabs_animate">
+                        <ul class="left-holder mt-20 tab-menu">
+                            <li><a href=#tab-1>Who We are</a>
+                            <li><a href=#tab-2>Our Goal</a>
+                            <li><a href=#tab-3>History</a>
+                        </ul>
+                        <div id="tab-1">
+                            <div class="text-content">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in.Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in.
+                                </p>
+                            </div>
+                        </div>
+                        <div id="tab-2">
+                            <div class="text-content">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur.
+                                </p>
+                            </div>
+                        </div>
+                        <div id="tab-3">
+                            <div class="text-content">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{!-- team --}}
+<div class="section-block-grey">
+    <div class="container">
+        <div class="center-holder section-heading">
+            <h2>Team Members</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br>incididunt ut labore et
+                dolore magna aliqua.
+        </div>
+        <div class="row">
+            {{# each data.teamMembers}}
+            <div class="col-xs-12 col-md-3 col-sm-6">
+                <div class="team-member">
+                    <div class="team-member-image"><img alt="member" src="{{{cloudinaryUrl image}}}">
+                        <div class="team-member-overlay">
+                            <div class="team-member-content">
+                                {{#if socialLinks.facebook}}
+                                <a href="{{{socialLinks.facebook}}}" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                                {{/if}}
+                                {{#if socialLinks.twitter}}
+                                <a href="{{{socialLinks.twitter}}}" target="_blank"><i class="fa fa-twitter"></i></a>
+                                {{/if}}
+                                {{#if socialLinks.instagram}}
+                                <a href="{{{socialLinks.instagram}}}" target="_blank"><i class="fa fa-instagram"></i></a>
+                                {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member-name">
+                        <h4>{{name}}</h4>
+                        <h6>{{position}}</h6>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+{{!-- partners --}}
+<div class="partner-section">
+    <div class="container">
+        <div class="center-holder section-heading">
+            <h2>Our Clients</h2>
+        </div>
+        <div class="owl-carousel owl-theme partners" id="our-partners">
+            {{# each data.clients}}
+            <div class=item> <img alt=partner-image src="{{{cloudinaryUrl image}}}"> </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

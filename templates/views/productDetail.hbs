@@ -1,0 +1,32 @@
+{{!-- banner --}}
+<div class="page-title-section" style="background-image:url(/images/parallax-5.jpg)">
+    <div class="container">
+        <div class="center-holder page-title">
+            <h1>{{data.product.name}}</h1>
+            <ul>
+                <li><a href='/'>Home</a></li>
+                <li><a href='/products'>Products</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{{!-- product detail --}}
+<div class="section-block">
+    <div class="container">
+        {{#if data.product.categories}}
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-sm-12">
+                <div class="p-detail-box"><i class="icon-notebook-1"></i>
+                    <h4>Category</h4>
+                    <p>{{data.product.categories}}
+                </div>
+            </div>
+        </div>
+        {{/if}}
+        <div class="p-detail-img">
+            <img alt="project-image" src="{{{cloudinaryUrl data.product.image height=400 width=1140 crop='fill'}}}"
+                class="mt-20 border-round img-shadow">
+            {{{data.product.content.full}}}
+        </div>
+    </div>
+</div>

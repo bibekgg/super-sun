@@ -1,44 +1,82 @@
-<div class="container">
-	<h1>Contact Us</h1>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="col-sm-8 col-md-6">
-			{{#if enquirySubmitted}}
-			<h3>Thanks for getting in touch.</h3>
-			{{else}}
-			<form method="post">
-				<input type="hidden" name="action" value="contact">
-				<div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
-					<label>Name</label>
-					<input type="text" name="name.full"  class="form-control" value="{{formData.[name.full]}}">
-				</div>
-				<div class="form-group {{#if validationErrors.email}}has-error{{/if}}">
-					<label>Email</label>
-					<input type="email" name="email" class="form-control" value="{{formData.email}}">
-				</div>
-				<div class="form-group">
-					<label>Phone</label>
-					<input type="text" name="phone" placeholder="(optional)" class="form-control" value="{{formData.phone}}">
-				</div>
-				<div class="form-group {{#if validationErrors.enquiryType}}has-error{{/if}}">
-					<label>What are you contacting us about?</label>
-					<select name="enquiryType" class="form-control">
-						<option value="">(select one)</option>
-						{{#each enquiryTypes}}
-						<option value="{{value}}">{{label}}</option>
-						{{/each}}
-					</select>
-				</div>
-				<div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
-					<label>Message</label>
-					<textarea name="message" placeholder="Leave us a message..." rows="4" class="form-control">{{formData.message}}</textarea>
-				</div>
-				<div class="form-actions">
-					<button type="submit" class="btn btn-primary">Send</button>
-				</div>
-			</form>
-			{{/if}}
+{{!-- banner --}}
+<div class="page-title-section" style="background-image:url(/images/parallax-5.jpg)">
+	<div class="container">
+		<div class="center-holder page-title">
+			<h1>Contact</h1>
+			<ul>
+				<li><a href='/'>Home</a>
+				<li><a href='/contact'>Contact</a>
+			</ul>
 		</div>
 	</div>
 </div>
+{{!-- contact detail --}}
+<div class="partner-section-grey">
+	<div class="container">
+		<div class="contact-box">
+			<div class=row>
+				<div class="col-xs-12 col-md-4 col-sm-4 contact-icon">
+					<div class="icon-box"><i class="icon-phone-reciever"></i></div>
+					<h4>Phone</h4>
+					<p>Phone: +1-23-456789<p>Fax: +1-23-456789
+				</div>
+				<div class="col-xs-12 col-md-4 col-sm-4 contact-icon">
+					<div class="icon-box"><i class="icon-map-location"></i></div>
+					<h4>Address</h4>
+					<p>Lane London U.K<p>Sheram 113
+				</div>
+				<div class="col-xs-12 col-md-4 col-sm-4 contact-icon">
+					<div class="icon-box"><i class="icon-chat-bubbles"></i></div>
+					<h4>Email</h4>
+					<p>Email: example@email.com<p>Email: example@email.com
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{!-- contact form --}}
+<div class="section-block">
+	<div class="container">
+		<div class="center-holder section-heading">
+			<h2>Send us a message</h2>
+		</div>
+		<div class="row mt-70">
+			<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+				{{#if enquirySubmitted}}
+				<h3 class="section-heading">Thanks for getting in touch.</h3>
+				{{else}}
+				<form class="primary-form" method="post">
+					<input type="hidden" name="action" value="contact">
+					<div class="col-xs-12">
+						<input placeholder="Your Name" required name="name.full" value="{{formData.[name.full]}}">
+					</div>
+					<div class="col-xs-6">
+						<input placeholder="E-mail adress" required name="email" type="email"
+							value="{{formData.email}}">
+					</div>
+					<div class="col-xs-6">
+						<input placeholder="Phone Number" name="phone" value="{{formData.phone}}">
+					</div>
+					<div class="col-xs-12">
+						<textarea name="message" required placeholder="Your Message">{{formData.message}}</textarea>
+					</div>
+					<div class="center-holder">
+						<button class="button button-primary mt-30" type="submit">Send Message</button>
+					</div>
+				</form>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</div>
+{{!-- map --}}
+<iframe
+	src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14135.810015895991!2d85.43179566137697!3d27.656941156511557!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6e67cad5aa98fdab!2sSuperSun+Noodles!5e0!3m2!1sen!2snp!4v1556916388098!5m2!1sen!2snp"
+	width="100%" height="400" frameborder="0" style="border:0" allowfullscreen>
+</iframe>
+{{!-- <div id=map>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFfiIWQysJYvv8Rp4Y3a9ZNJtBWWLKde0&callback=initMap"
+		async defer></script>
+</div> --}}
+
+{{!-- <script src="/assets/js/map.js"></script> --}}

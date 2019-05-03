@@ -137,28 +137,26 @@
 	</div>
 </div>
 {{!-- services --}}
-<div class=section-block-grey>
-	<div class=container>
-		<div class="center-holder section-heading">
-			<h2>Our Services</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br>incididunt ut labore et
-				dolore magna aliqua.
-		</div>
-		<div class=row>
-			{{# each data.services}}
-			<div class="col-xs-12 col-md-4 col-sm-4">
-				<div class=service-grid>
-					<img alt=service-image src="{{{cloudinaryUrl image width=342 height=200 }}}">
-					<div class=inner-padd>
-						<h4>{{name}}</h4>
-						<p>{{description}} </p>
-						<a href=#>Read more</a>
-					</div>
-				</div>
-			</div>
-			{{/each}}
-		</div>
-	</div>
+<div class="section-block-grey">
+    <div class="container">
+        <div class="center-holder section-heading">
+            <h2>Our Services</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br>incididunt ut labore et
+                dolore magna aliqua.
+        </div>
+        <div class="row">
+            {{# each data.services}}
+            <div class="col-xs-12 col-md-4 col-sm-4">
+                <div class="service-block"><img alt="service-image" src="{{{cloudinaryUrl image  width=342 height=200}}}">
+                    <div class="clearfix inner-padd">
+                            <h4>{{name}}</h4>
+                            <p>{{description}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
 </div>
 {{!-- counter --}}
 <div class=section-block-parallax style="background-image:url(images/parallax-1.jpg)">
@@ -277,6 +275,9 @@
 {{!-- partners --}}
 <div class="partner-section">
 	<div class="container">
+		<div class="center-holder section-heading">
+            <h2>Our Clients</h2>
+        </div>
 		<div class="owl-carousel owl-theme partners" id="our-partners">
 			{{# each data.clients}}
 			<div class=item> <img alt=partner-image src="{{{cloudinaryUrl image}}}"> </div>
