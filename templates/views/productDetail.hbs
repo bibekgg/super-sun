@@ -24,8 +24,12 @@
         </div>
         {{/if}}
         <div class="p-detail-img">
+            {{#if data.product.image.url}}
             <img alt="project-image" src="{{{cloudinaryUrl data.product.image height=400 width=1140 crop='fill'}}}"
                 class="mt-20 border-round img-shadow">
+            {{else}}
+            <img alt="blog-img" src="https://via.placeholder.com/1140x400?text={{data.product.name}}">
+            {{/if}}
             {{{data.product.content.full}}}
         </div>
     </div>

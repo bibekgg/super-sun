@@ -20,7 +20,11 @@
                     <a href="{{productUrl slug}}">
                         <div class="project-item">
                             <div class="overlay-container">
+                                {{#if image.url}}
                                 <img alt="project-img" src="{{{cloudinaryUrl image width=360 height=240 crop='fill'}}}">
+                                {{else}}
+                                <img alt="blog-img" src="https://via.placeholder.com/360x240?text={{name}}">
+                                {{/if}}
                                 <div class="project-item-overlay">
                                     <h4>{{name}}</h4>
                                     <p>{{content.brief}}</p>

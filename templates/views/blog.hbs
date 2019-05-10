@@ -19,7 +19,13 @@
 			<div class="col-xs-12 col-sm-6 col-md-4">
 				<div class="blog-grid" style="height: calc(100% - 30px)">
 					<div class="blog-grid-img">
-						<img alt="blog-img" src="{{{cloudinaryUrl image width=380 height=200 crop='fit'}}}">
+						<a href="{{postUrl slug}}">
+							{{#if image.url}}
+							<img alt="blog-img" src="{{{cloudinaryUrl image width=380 height=200 crop='fit'}}}">
+							{{else}}
+							<img alt="blog-img" src="https://via.placeholder.com/380x200?text={{title}}">
+							{{/if}}
+						</a>
 					</div>
 					<div class="blog-grid-content inner-padd">
 						<h4><a href="{{postUrl slug}}">{{{title}}}</a></h4>

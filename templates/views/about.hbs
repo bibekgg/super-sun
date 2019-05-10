@@ -77,17 +77,25 @@
             {{# each data.teamMembers}}
             <div class="col-xs-12 col-md-3 col-sm-6">
                 <div class="team-member">
-                    <div class="team-member-image"><img alt="member" src="{{{cloudinaryUrl image}}}">
+                    <div class="team-member-image">
+                        {{#if image.url}}
+                        <img alt="member"
+                            src="{{{cloudinaryUrl image width=360 height=440 gravity='auto' crop='fill'}}}">
+                        {{else}}
+                        <img alt="blog-img" src="https://via.placeholder.com/360x440?text={{name}}">
+                        {{/if}}
                         <div class="team-member-overlay">
                             <div class="team-member-content">
                                 {{#if socialLinks.facebook}}
-                                <a href="{{{socialLinks.facebook}}}" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                                <a href="{{{socialLinks.facebook}}}" target="_blank"><i
+                                        class="fa fa-facebook-official"></i></a>
                                 {{/if}}
                                 {{#if socialLinks.twitter}}
                                 <a href="{{{socialLinks.twitter}}}" target="_blank"><i class="fa fa-twitter"></i></a>
                                 {{/if}}
                                 {{#if socialLinks.instagram}}
-                                <a href="{{{socialLinks.instagram}}}" target="_blank"><i class="fa fa-instagram"></i></a>
+                                <a href="{{{socialLinks.instagram}}}" target="_blank"><i
+                                        class="fa fa-instagram"></i></a>
                                 {{/if}}
                             </div>
                         </div>
@@ -110,7 +118,13 @@
         </div>
         <div class="owl-carousel owl-theme partners" id="our-partners">
             {{# each data.clients}}
-            <div class=item> <img alt=partner-image src="{{{cloudinaryUrl image}}}"> </div>
+            <div class=item>
+                {{#if image.url}}
+                <img alt=partner-image src="{{{cloudinaryUrl image width=230 height=115 crop='fill'}}}">
+                {{else}}
+                <img alt="blog-img" src="https://via.placeholder.com/230x115?text={{title}}">
+                {{/if}}
+            </div>
             {{/each}}
         </div>
     </div>

@@ -16,7 +16,11 @@
 		<div class="row">
 			<div class="col-xs-12 col-md-8 col-sm-8">
 				<div class="blog-post">
+					{{#if data.post.image.url}}
 					<img alt="blog-image" src="{{{cloudinaryUrl data.post.image width=760 height=390 crop='fill'}}}">
+					{{else}}
+					<img alt="blog-img" src="https://via.placeholder.com/760x390?text={{data.post.title}}">
+					{{/if}}
 					<h4>{{data.post.title}}</h4>
 					{{#if data.post.author.name.first}}
 					<div class="blog-post-info">
@@ -39,10 +43,17 @@
 					<div class="recent-posts">
 						<div class="row">
 							<div class="col-xs-12 col-md-5 col-sm-5 recent-posts-img">
-								<img alt="blog-image" src="{{{cloudinaryUrl image width=380 height=200 crop='fill'}}}">
+								<a href="{{postUrl slug}}">
+									{{#if image.url}}
+									<img alt="blog-image"
+										src="{{{cloudinaryUrl image width=380 height=200 crop='fill'}}}">
+									{{else}}
+									<img alt="blog-img" src="https://via.placeholder.com/380x200?text={{title}}">
+									{{/if}}
+								</a>
 							</div>
 							<div class="col-xs-12 col-md-7 col-sm-7 recent-posts-text">
-								<p><a href=#>{{title}}</a></p>
+								<p><a href="{{postUrl slug}}">{{title}}</a></p>
 								<span>{{ date publishedDate format='MMMM Do YYYY' }}</span>
 							</div>
 						</div>
