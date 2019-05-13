@@ -11,7 +11,7 @@ var handlebars = require('express-handlebars');
 // and documentation.
 
 keystone.init({
-	'name': 'super sun',
+	'name': 'Super Sun',
 	'brand': 'super sun',
 
 	'stylus': 'public',
@@ -19,9 +19,9 @@ keystone.init({
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': '.hbs',
-	'port': 3001,
 	'wysiwyg cloudinary images': true,
-	'wysiwyg additional options': { 'external_plugins': { 'uploadimage': '/assets/js/uploadimage/plugin.min.js' } },
+	'wysiwyg additional buttons': 'preview',
+	'wysiwyg additional plugins': 'preview',
 	'custom engine': handlebars.create({
 		layoutsDir: 'templates/views/layouts',
 		partialsDir: 'templates/views/partials',
