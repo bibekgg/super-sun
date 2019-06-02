@@ -35,6 +35,7 @@ keystone.init({
 	'user model': 'User',
 });
 
+keystone.set('cloudinary secure', true);
 // Load your project's Models
 keystone.import('models');
 
