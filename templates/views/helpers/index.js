@@ -201,6 +201,11 @@ module.exports = function () {
 		return ('/products/' + productSlug);
 	};
 	
+	// Direct url link to a specific member
+	_helpers.memberUrl = function (memberSlug, options) {
+		return ('/about/' + memberSlug);
+	};
+
 	// might be a ghost helper
 	// used for pagination urls on blog
 	_helpers.pageUrl = function (pageNumber, options) {

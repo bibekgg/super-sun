@@ -36,6 +36,7 @@ exports = module.exports = function (app) {
 	// Views
 	app.get('/', routes.views.index);
 	app.get('/about', routes.views.about);
+	app.get('/about/:member', routes.views.teamDetail);
 	app.get('/products', routes.views.products);
 	app.get('/products/:product', routes.views.productDetail);
 	app.get('/blog/:category?', routes.views.blog);
