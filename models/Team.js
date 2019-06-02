@@ -16,6 +16,7 @@ Team.add({
     position: { type: String, require: true },
     image: { type: Types.CloudinaryImage },
     sort: { type: Number, require: true },
+    description: { type: Types.Markdown },
     socialLinks: {
         facebook: { type: Types.Url },
         twitter: { type: Types.Url },

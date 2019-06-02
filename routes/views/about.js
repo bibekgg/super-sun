@@ -20,7 +20,7 @@ exports = module.exports = function (req, res) {
 	 */
 	view.on('init', function (next) {
 
-		keystone.list('Team').model.find().sort('-sort').exec(function (err, results) {
+		keystone.list('Team').model.find().sort('sort').exec(function (err, results) {
 
 			if (err || !results.length) {
 				return next(err);
