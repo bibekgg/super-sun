@@ -1,14 +1,14 @@
 {{!-- pogo slider --}}
 <div class=pogoSlider id=js-main-slider>
-	<div class=pogoSlider-slide style=background-image:url(images/slider/slide-4.jpg) data-duration=1000
+	<div class=pogoSlider-slide style=background-image:url(images/slider/slide-4.jpg) data-duration=500
 		data-transition=fade>
 		<div class=container>
 			<div class=slider-content>
 				<div class=row>
 					<div class="col-xs-12 col-sm-12 col-md-8">
-						<h2 class=pogoSlider-slide-element data-delay=500 data-duration=750 data-in=slideDown
+						<h2 class=pogoSlider-slide-element data-delay=100 data-duration=750 data-in=slideDown
 							data-out=slideUp>You Can change the World</h2>
-						<p class="pogoSlider-slide-element hidde" data-delay=900 data-duration=750 data-in=slideRight
+						<p class="pogoSlider-slide-element hidde" data-delay=100 data-duration=750 data-in=slideRight
 							data-out=slideUp>Every failure is a blessing hidden under the mask, provided that it teaches
 							something that a person would not otherwise learn. Most of the so-called failures are just a
 							temporary defeat.</p><a href=#
@@ -19,15 +19,15 @@
 			</div>
 		</div>
 	</div>
-	<div class=pogoSlider-slide style="background-image:url(images/slider/slide-2.jpg)" data-duration=1000
+	<div class=pogoSlider-slide style="background-image:url(images/slider/slide-2.jpg)" data-duration=500
 		data-transition=fade>
 		<div class=container>
 			<div class=slider-content>
 				<div class=row>
 					<div class="col-xs-12 col-sm-12 col-md-8">
-						<h2 class=pogoSlider-slide-element data-delay=500 data-duration=750 data-in=slideDown
+						<h2 class=pogoSlider-slide-element data-delay=100 data-duration=750 data-in=slideDown
 							data-out=slideUp>You Can, If You Believe You Can</h2>
-						<p class=pogoSlider-slide-element data-delay=900 data-duration=750 data-in=slideRight
+						<p class=pogoSlider-slide-element data-delay=100 data-duration=750 data-in=slideRight
 							data-out=slideUp>Define your goals! Work to achieve them! Direct your thoughts, control
 							emotions, act, and you will become the true creator of your destiny. You will find the
 							answers you need if you look for them.</p><a href=#
@@ -38,15 +38,15 @@
 			</div>
 		</div>
 	</div>
-	<div class=pogoSlider-slide style=background-image:url(images/slider/slide-3.jpg) data-duration=1000
+	<div class=pogoSlider-slide style=background-image:url(images/slider/slide-3.jpg) data-duration=500
 		data-transition=fade>
 		<div class=container>
 			<div class=slider-content>
 				<div class=row>
 					<div class="col-xs-12 col-sm-12 col-md-8">
-						<h2 class=pogoSlider-slide-element data-delay=500 data-duration=750 data-in=slideDown
+						<h2 class=pogoSlider-slide-element data-delay=100 data-duration=750 data-in=slideDown
 							data-out=slideUp>Courage is grace under pressure</h2>
-						<p class=pogoSlider-slide-element data-delay=900 data-duration=750 data-in=slideRight
+						<p class=pogoSlider-slide-element data-delay=100 data-duration=750 data-in=slideRight
 							data-out=slideUp>The starting point of any achievement is desire. Keep it constantly in your
 							memory. Weak desires bring in weak results, just as a small amount of fire gives a small
 							amount of heat.</p><a href=# class="pogoSlider-slide-element button-lg button-primary mt-30"
@@ -56,15 +56,15 @@
 			</div>
 		</div>
 	</div>
-	<div class=pogoSlider-slide style="background-image:url(images/slider/slide-5.jpg)" data-duration=1000
+	<div class=pogoSlider-slide style="background-image:url(images/slider/slide-5.jpg)" data-duration=500
 		data-transition=fade>
 		<div class=container>
 			<div class=slider-content>
 				<div class=row>
 					<div class="col-xs-12 col-sm-12 col-md-8">
-						<h2 class=pogoSlider-slide-element data-delay=500 data-duration=750 data-in=slideDown
+						<h2 class=pogoSlider-slide-element data-delay=100 data-duration=750 data-in=slideDown
 							data-out=slideUp>Make Business Easy with us</h2>
-						<p class=pogoSlider-slide-element data-delay=900 data-duration=750 data-in=slideRight
+						<p class=pogoSlider-slide-element data-delay=100 data-duration=750 data-in=slideRight
 							data-out=slideUp>If people wanted to improve themselves instead of saving the whole world,
 							if they tried to achieve inner freedom instead of liberating all of humanity, how much they
 							would do for the real liberation of mankind..</p><a href=#
@@ -101,11 +101,11 @@
 			{{# each data.services}}
 			<div class="col-xs-12 col-md-4 col-sm-4">
 				<div class="service-block">
-					{{#if image.url}}
+					{{!-- {{#if image.url}}
 					<img alt="service-image" src="{{{cloudinaryUrl image  width=342 height=200}}}">
 					{{else}}
 					<img alt="blog-img" src="https://via.placeholder.com/342x200?text={{name}}">
-					{{/if}}
+					{{/if}} --}}
 					<div class="clearfix inner-padd service-min-height">
 						<h4>{{name}}</h4>
 						<p>{{description}}</p>
