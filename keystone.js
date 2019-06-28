@@ -36,6 +36,7 @@ keystone.init({
 });
 
 keystone.set('cloudinary secure', true);
+keystone.set('baseUrl', 'https://www.supersun.com.np/');
 // Load your project's Models
 keystone.import('models');
 

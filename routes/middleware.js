@@ -27,6 +27,7 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'Contact', key: 'contact', href: '/contact' },
 	];
 	res.locals.user = req.user;
+	res.locals.baseUrl = keystone.get('baseUrl');
 	next();
 };
 
