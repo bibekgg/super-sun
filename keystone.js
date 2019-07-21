@@ -33,6 +33,7 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
+	port: 8080
 });
 
 keystone.set('cloudinary secure', true);
