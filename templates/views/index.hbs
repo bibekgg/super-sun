@@ -1,81 +1,41 @@
 {{!-- pogo slider --}}
 <div class=pogoSlider id=js-main-slider>
-	<div class=pogoSlider-slide style=background-image:url(images/slider/slide-4.jpg) data-duration=500
+	{{#each data.banners}}
+	{{#if image.url}}
+	<div class=pogoSlider-slide style="background-image:url({{cloudinaryUrl image}})" data-duration=500
 		data-transition=fade>
 		<div class=container>
 			<div class=slider-content>
 				<div class=row>
 					<div class="col-xs-12 col-sm-12 col-md-8">
 						<h2 class=pogoSlider-slide-element data-delay=100 data-duration=750 data-in=slideDown
-							data-out=slideUp>Best Quality and Hygenic</h2>
+							data-out=slideUp>{{title}}</h2>
 						<p class="pogoSlider-slide-element hidde" data-delay=100 data-duration=750 data-in=slideRight
-							data-out=slideUp>We have been delivering quality noodles with hygiene focused and create
-							brand value among consumers.</p>
-						{{!-- <a href=# class="pogoSlider-slide-element button-lg button-primary mt-30" data-delay=500
-							data-duration=1150 data-in=slideRight data-out=slideDown>Read More</a> --}}
+							data-out=slideUp>{{description}}</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class=pogoSlider-slide style="background-image:url(images/slider/slide-5.jpg)" data-duration=500
+	{{else}}
+	<div class=pogoSlider-slide style="background-image:url(images/slider/slide-4.jpg)" data-duration=500
 		data-transition=fade>
 		<div class=container>
 			<div class=slider-content>
 				<div class=row>
 					<div class="col-xs-12 col-sm-12 col-md-8">
 						<h2 class=pogoSlider-slide-element data-delay=100 data-duration=750 data-in=slideDown
-							data-out=slideUp>Part of Diet</h2>
-						<p class=pogoSlider-slide-element data-delay=100 data-duration=750 data-in=slideRight
-							data-out=slideUp>Dried wheat flour stick noodles are an important part in the diet of many
-							Nepalese people all over Nepal.</p>
-						{{!-- <a href=# class="pogoSlider-slide-element button-lg button-primary mt-30" data-delay=500
-							data-duration=1150 data-in=slideRight data-out=slideDown>Read More</a> --}}
+							data-out=slideUp>{{title}}</h2>
+						<p class="pogoSlider-slide-element hidde" data-delay=100 data-duration=750 data-in=slideRight
+							data-out=slideUp>{{description}}</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class=pogoSlider-slide style=background-image:url(images/slider/slide-3.jpg) data-duration=500
-		data-transition=fade>
-		<div class=container>
-			<div class=slider-content>
-				<div class=row>
-					<div class="col-xs-12 col-sm-12 col-md-8">
-						<h2 class=pogoSlider-slide-element data-delay=100 data-duration=750 data-in=slideDown
-							data-out=slideUp>DFTQC Certified</h2>
-						<p class=pogoSlider-slide-element data-delay=100 data-duration=750 data-in=slideRight
-							data-out=slideUp>We are one of the few company in NEPAL for manufacturing stick noodles by
-							achieving the DFTQC number after being tested by the Department of food and quality control,
-							an organization responsible for the enforcement of Food Act and Regulations.</p>
-						{{!-- <a href=# class="pogoSlider-slide-element button-lg button-primary mt-30" data-delay=500
-							data-duration=1150 data-in=slideRight data-out=slideDown>Read More</a> --}}
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	{{!-- <div class=pogoSlider-slide style="background-image:url(images/slider/slide-2.jpg)" data-duration=500
-		data-transition=fade>
-		<div class=container>
-			<div class=slider-content>
-				<div class=row>
-					<div class="col-xs-12 col-sm-12 col-md-8">
-						<h2 class=pogoSlider-slide-element data-delay=100 data-duration=750 data-in=slideDown
-							data-out=slideUp>Make Business Easy with us</h2>
-						<p class=pogoSlider-slide-element data-delay=100 data-duration=750 data-in=slideRight
-							data-out=slideUp>If people wanted to improve themselves instead of saving the whole world,
-							if they tried to achieve inner freedom instead of liberating all of humanity, how much they
-							would do for the real liberation of mankind..</p>
-						{{!-- <a href=# class="pogoSlider-slide-element button-lg button-primary mt-30" data-delay=500
-							data-duration=1150 data-in=slideRight data-out=slideDown>Read More</a> --}}
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> --}}
+	{{/if}}
+	{{/each}}
 </div>
-{{!-- carausal --}}
 <div class=section-block>
 	<div class=container>
 		<div class="center-holder section-heading mb-0">
@@ -171,7 +131,8 @@
 				<div class=article-icon><i class=icon-user></i></div>
 				<div class=article-text>
 					<h3>Customer Feedback</h3>
-					<p>We are very flexible and always take feedback from our customers and make necessary changes if
+					<p>We are very flexible and always take feedback from our customers and make necessary changes
+						if
 						needed.</p>
 				</div>
 			</article>
@@ -179,7 +140,8 @@
 				<div class=article-icon><i class=icon-smartphone-10></i></div>
 				<div class=article-text>
 					<h3>Mobile friendly</h3>
-					<p>We have been very serious about product quality so we test our product regularly on Department of
+					<p>We have been very serious about product quality so we test our product regularly on
+						Department of
 						food and quality control.</p>
 				</div>
 			</article>
@@ -268,7 +230,8 @@
 					{{/if}}
 				</div>
 				<div class=testmonial-text>
-					<div class=ml-15><span>{{company}}</span> <strong>{{name}}</strong><span>{{date postedDate}}</span>
+					<div class=ml-15><span>{{company}}</span>
+						<strong>{{name}}</strong><span>{{date postedDate}}</span>
 						{{{message}}}
 					</div>
 				</div>

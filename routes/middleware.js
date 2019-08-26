@@ -29,6 +29,7 @@ exports.initLocals = function (req, res, next) {
 	];
 	res.locals.user = req.user;
 	res.locals.baseUrl = keystone.get('baseUrl');
+	res.locals.req = req;
 	next();
 };
 

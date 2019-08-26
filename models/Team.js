@@ -19,6 +19,7 @@ Team.add({
     description: { type: Types.Html },
     socialLinks: {
         facebook: { type: Types.Url },
+        linkedin: { type: Types.Url },
         twitter: { type: Types.Url },
         instagram: { type: Types.Url }
     }

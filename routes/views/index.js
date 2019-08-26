@@ -13,6 +13,7 @@ exports = module.exports = function (req, res) {
 		services: [],
 		testimonials: [],
 		clients: [],
+		banners: []
 	};
 
 	/**
@@ -57,6 +58,21 @@ exports = module.exports = function (req, res) {
 				return next(err);
 			}
 			locals.data.clients = results;
+			next();
+		});
+	});
+
+	/**
+	 * Get all banner.
+	 */
+	view.on('init', function (next) {
+
+		keystone.list('Banner').model.find().exec(function (err, results) {
+
+			if (err || !results.length) {
+				return next(err);
+			}
+			locals.data.banners = results;
 			next();
 		});
 	});
