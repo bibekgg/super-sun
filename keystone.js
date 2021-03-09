@@ -28,6 +28,10 @@ keystone.init({
 		defaultLayout: 'default',
 		helpers: new require('./templates/views/helpers')(),
 		extname: '.hbs',
+		runtimeOptions: {
+			allowProtoPropertiesByDefault: true,
+			allowProtoMethodsByDefault: true
+		}
 	}).engine,
 	'auto update': true,
 	'session': true,
